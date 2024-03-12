@@ -4,7 +4,7 @@ package org.example;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        String password ="bhdffgf54";
+        String password ="bhdffgfvfsg4B";
         if(isPasswordValid(password)){
             System.out.println("alles gut");
         };
@@ -42,10 +42,10 @@ public class Main {
                 containsUpperCase = true;
             }
             if (containsLowerCase && containsUpperCase) {
-                return false;
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
     public static boolean isCommonPassword(String password) {
