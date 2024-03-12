@@ -4,19 +4,20 @@ package org.example;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        String password ="password1";
+        String password ="passwOrd&1789";
         if(isPasswordValid(password)){
-        System.out.println("alles gut");
+        System.out.println("sehr gute Wahl");
         }
     }
 
     public static boolean isPasswordValid(String password){
-        if(!isPasswordLengthValid(password))System.out.println("zu kurz");
-        if(!containsDigits(password))System.out.println("Zahl fehlt");
+        if(!isPasswordLengthValid(password))System.out.println("zu kurz!");
+        if(!containsDigits(password))System.out.println("Wo ist die Zahl?");
         if(!containsUppercaseAndLowercase(password))System.out.println("große und kleine Buchstaben verwenden");
         if(!isCommonPassword(password))System.out.println("komm, sei kreativ");
+        if(!containsSpecialCharacters(password))System.out.println("nun noch ein Sonderzeichen");
 
-        return isPasswordLengthValid(password) && containsDigits(password)
+        return isPasswordLengthValid(password) && containsDigits(password) && containsSpecialCharacters(password)
                 && containsUppercaseAndLowercase(password) && isCommonPassword(password);
     }
 
