@@ -4,16 +4,16 @@ package org.example;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        String password ="bhdffgfvfsg4B";
+        String password ="password1";
         if(isPasswordValid(password)){
-            System.out.println("alles gut");
+        System.out.println("alles gut");
         };
     }
 
     public static boolean isPasswordValid(String password){
         if(!isPasswordLengthValid(password))System.out.println("zu kurz");
         if(!containsDigits(password))System.out.println("Zahl fehlt");
-        if(!containsUppercaseAndLowercase(password))System.out.println("groß und klein-Buchstaben verwenden");
+        if(!containsUppercaseAndLowercase(password))System.out.println("große und kleine Buchstaben verwenden");
         if(!isCommonPassword(password))System.out.println("komm, sei kreativ");
 
         return isPasswordLengthValid(password) && containsDigits(password)
@@ -49,7 +49,7 @@ public class Main {
     }
 
     public static boolean isCommonPassword(String password) {
-        String[] commonPasswords = {"password1", "123456789A", "qwerty123", "lassmichrein1", "Geheim1", "admin123"};
+        String[] commonPasswords = {"password1", "123456789A", "qwertz123", "lassmichrein1", "Geheim1", "admin123"};
 
         for (String commonPassword : commonPasswords) {
             if (password.equalsIgnoreCase(commonPassword)) {
@@ -57,6 +57,15 @@ public class Main {
             }
         }
         return true;
+    }
+
+    public static boolean containsSpecialCharacters(String password) {
+        for (char character : password.toCharArray()) {
+            if (!Character.isLetterOrDigit(character)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
 

@@ -87,4 +87,24 @@ class MainTest {
         //THEN
         Assertions.assertFalse(actual);
     }
+
+    @Test
+    void returnTrue_whenPassword_withSpecialChar(){
+        //GIVEN
+        String Password = "Gdfsgfsg%";
+        //WHEN
+        boolean actual = Main.containsSpecialCharacters(Password);
+        //THEN
+        Assertions.assertTrue(actual);
+    }
+
+    @Test
+    void returnFalse_whenPassword_withSpecialChar(){
+        //GIVEN
+        String Password = "Gdfsgfsg999";
+        //WHEN
+        boolean actual = Main.containsSpecialCharacters(Password);
+        //THEN
+        Assertions.assertFalse(actual);
+    }
 }
