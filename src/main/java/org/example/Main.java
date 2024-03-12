@@ -4,14 +4,19 @@ package org.example;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        String password ="bhdgvfgfg3434";
+        String password ="bhdffgf54";
         if(isPasswordValid(password)){
             System.out.println("alles gut");
         };
     }
 
     public static boolean isPasswordValid(String password){
-         return isPasswordLengthValid(password) && containsDigits(password)
+        if(!isPasswordLengthValid(password))System.out.println("zu kurz");
+        if(!containsDigits(password))System.out.println("Zahl fehlt");
+        if(!containsUppercaseAndLowercase(password))System.out.println("groß und klein-Buchstaben verwenden");
+        if(!isCommonPassword(password))System.out.println("komm, sei kreativ");
+
+        return isPasswordLengthValid(password) && containsDigits(password)
                 && containsUppercaseAndLowercase(password) && isCommonPassword(password);
     }
 
@@ -37,10 +42,10 @@ public class Main {
                 containsUpperCase = true;
             }
             if (containsLowerCase && containsUpperCase) {
-                return true;
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
     public static boolean isCommonPassword(String password) {
