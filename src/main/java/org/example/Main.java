@@ -7,7 +7,7 @@ public class Main {
         String password ="password1";
         if(isPasswordValid(password)){
         System.out.println("alles gut");
-        };
+        }
     }
 
     public static boolean isPasswordValid(String password){

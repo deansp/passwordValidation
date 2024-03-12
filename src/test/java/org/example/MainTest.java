@@ -3,8 +3,6 @@ package org.example;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class MainTest {
 
     @Test
@@ -70,7 +68,6 @@ class MainTest {
     @Test
     void returnTrue_whenPassword_AbCDEFG1(){
         //GIVEN
-        String[] commonPasswords = {"password1", "123456", "qwerty", "lassmichrein", "Geheim1", "admin"};
         String Password = "AbCDEFGH1";
         //WHEN
         boolean actual = Main.isCommonPassword(Password);
