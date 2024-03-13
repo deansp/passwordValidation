@@ -96,7 +96,7 @@ class MainTest {
     }
 
     @Test
-    void returnFalse_whenPassword_withSpecialChar(){
+    void returnFalse_whenPassword_withoutSpecialChar(){
         //GIVEN
         String Password = "Gdfsgfsg999";
         //WHEN
